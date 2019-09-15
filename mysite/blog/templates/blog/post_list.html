@@ -4,25 +4,26 @@
     </head>
     <body>
         <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+            <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-
-        <div>
-            <h2>오늘은 일요일</h2></br>
-            <p>오늘은 수요일, 오늘은 좀 스트레스를 받은 날 : < </p>
-            <h2>저장이 잘 되어랏</h2>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}    
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+github에 소스올리기 
+서버에서 github에 올라간 소스 받기
