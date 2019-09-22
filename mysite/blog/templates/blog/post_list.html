@@ -1,29 +1,19 @@
-<html>
-    <head>
-        <title>민정이의 파이썬 연습</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-        
-        {% for post in posts %}
-            <div>
-                <p>published: {{ post.published_date }}</p>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
-            </div>
-        {% endfor %}    
-    </body>
-</html>
+    {% endfor %}    
+{% endblock %}
+               
 
-
-
-
-
-
-
-
-
-github에 소스올리기 
+<!--github에 소스올리기 
+    stage에 올리기 
+    stage에 올라간 파일을 commit하기 
+    변경된 commit내역을 guthub과 연동하기(push)
 서버에서 github에 올라간 소스 받기
+     guthub에서 bashconsole에서 prac1  들어간 뒤 git pull을 치면 됨 -->
